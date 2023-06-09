@@ -5,6 +5,7 @@ import './index.css'
 import Root from './layout/root'
 import Home from './pages/Home/Home'
 import ClippingPath from './pages/Services/ClippingPath/ClippingPath'
+import Contact from './pages/Contact/Contact'
 
 
 const router = createBrowserRouter([
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: '/clipping-path',
         element: <ClippingPath />
+      },
+      {
+        path: '/contact',
+        element: <Contact />
       }
     ]
   }
