@@ -6,6 +6,8 @@ import Root from './layout/root'
 import Home from './pages/Home/Home'
 import ClippingPath from './pages/Services/ClippingPath/ClippingPath'
 import Contact from './pages/Contact/Contact'
+import Login from './Auth/Login/Login'
+import Signup from './Auth/Signup/Signup'
 
 
 const router = createBrowserRouter([
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />
+      },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/signup',
+        element: <Signup />
       }
     ]
   }
