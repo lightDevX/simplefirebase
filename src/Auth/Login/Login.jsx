@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GithubAuthProvider, GoogleAuthProvider, TwitterAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 import app from '../../firebase/firebase.init';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 
@@ -60,20 +61,25 @@ const Login = () => {
 
     return (
         <div>
-            {user ?
-                <button onClick={handleSignOut}>Sign Out</button> :
-                <>
-                    <button onClick={handleGoogleSignIn}>Login Google</button>
-                    <button onClick={handleGitHub}>Login github</button>
-                    <button onClick={handleTwitterSignIn}>Login Twitter</button>
-                </>
-            }
-            {user &&
-                <div>
-                    <h3>User: {user.displayName}</h3>
-                    <h4>Email : {user.email}</h4>
-                </div>
-            }
+            <div>
+                {user ?
+                    <button onClick={handleSignOut}>Sign Out</button> :
+                    <>
+                        <button onClick={handleGoogleSignIn}>Login Google</button>
+                        <button onClick={handleGitHub}>Login github</button>
+                        <button onClick={handleTwitterSignIn}>Login Twitter</button>
+                    </>
+                }
+                {user &&
+                    <div>
+                        <h3>User: {user.displayName}</h3>
+                        <h4>Email : {user.email}</h4>
+                    </div>
+                }
+            </div>
+            <div>
+                <Link to='/signup'><button>Sign Up</button></Link>
+            </div>
         </div>
     );
 };
