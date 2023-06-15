@@ -61,27 +61,29 @@ const Login = () => {
 
 
     return (
-        <div className='px-4'>
-            <div>
-                {user ?
-                    <button onClick={handleSignOut}>Sign Out</button> :
-                    <>
-                        <button onClick={handleGoogleSignIn}>Login Google</button>
-                        <button onClick={handleGitHub}>Login github</button>
-                        <button onClick={handleTwitterSignIn}>Login Twitter</button>
-                    </>
-                }
-                {user &&
-                    <div>
-                        <h3>User: {user.displayName}</h3>
-                        <h4>Email : {user.email}</h4>
-                    </div>
-                }
+        <>
+            <div className='w-50'>
+                <div>
+                    {user ?
+                        <button onClick={handleSignOut}>Sign Out</button> :
+                        <>
+                            <button onClick={handleGoogleSignIn}>Login Google</button>
+                            <button onClick={handleGitHub}>Login github</button>
+                            <button onClick={handleTwitterSignIn}>Login Twitter</button>
+                        </>
+                    }
+                    {user &&
+                        <div>
+                            <h3>User: {user.displayName}</h3>
+                            <h4>Email : {user.email}</h4>
+                        </div>
+                    }
+                </div>
+                <div>
+                    <Link to='/signup'><Button variant="primary">Sign Up</Button></Link>
+                </div>
             </div>
-            <div>
-                <Link to='/signup'><Button variant="primary">Sign Up</Button></Link>
-            </div>
-        </div>
+        </>
     );
 };
 

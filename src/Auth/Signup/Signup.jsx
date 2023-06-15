@@ -23,15 +23,15 @@ const Signup = () => {
 
     return (
         <>
-            <h3>This Register Form</h3>
-            <br />
-            <form onSubmit={handleSubmit}>
-                <input onChange={handleEmailField} type="email" name="email" id="email" placeholder='Provide your email' />
-                <br /> <br />
-                <input onBlur={handlePasswordField} type="password" name="password" id="password" placeholder='Provide your password' /><br />
+            <div className='mx-auto w-50'>
+                <h3>This Register Form</h3>
                 <br />
-                <button type="submit">Sign Up</button>
-            </form>
+                <form className='d-flex flex-column' onSubmit={handleSubmit}>
+                    <input className='w-50 mb-4' onChange={handleEmailField} type="email" name="email" id="email" placeholder='Provide your email' />
+                    <input className='w-50 mb-4' onBlur={handlePasswordField} type="password" name="password" id="password" placeholder='Provide your password' />
+                    <button className='w-25' type="submit">Sign Up</button>
+                </form>
+            </div>
         </>
     );
 };
