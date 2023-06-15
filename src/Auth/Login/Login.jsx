@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { GithubAuthProvider, GoogleAuthProvider, TwitterAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 import app from '../../firebase/firebase.init';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const Login = () => {
 
@@ -60,7 +61,7 @@ const Login = () => {
 
 
     return (
-        <div>
+        <div className='px-4'>
             <div>
                 {user ?
                     <button onClick={handleSignOut}>Sign Out</button> :
@@ -78,7 +79,7 @@ const Login = () => {
                 }
             </div>
             <div>
-                <Link to='/signup'><button>Sign Up</button></Link>
+                <Link to='/signup'><Button variant="primary">Sign Up</Button></Link>
             </div>
         </div>
     );
